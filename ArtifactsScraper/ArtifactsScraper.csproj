@@ -11,6 +11,7 @@
         <Description>A lightweight library designed to simplify the process of scraping CFX.RE Artifact information.</Description>
         <PackageProjectUrl>https://github.com/Felipellira/ArtifactsScraper</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Felipellira/ArtifactsScraper</RepositoryUrl>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
