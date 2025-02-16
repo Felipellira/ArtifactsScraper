@@ -5,10 +5,17 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>ArtifactsScraper</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>ArtifactsScraper</Title>
+        <Authors>Felipe Lira</Authors>
+        <Description>A lightweight library designed to simplify the process of scraping CFX.RE Artifact information.</Description>
+        <PackageProjectUrl>https://github.com/Felipellira/ArtifactsScraper</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Felipellira/ArtifactsScraper</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="HtmlAgilityPack" Version="1.11.72" />
     </ItemGroup>
+
 
 </Project>
