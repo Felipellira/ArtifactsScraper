@@ -33,8 +33,7 @@ Ensure that your development environment is properly configured to utilize the l
 
 Planned features for future releases include:
 
-- [ ] Supporting multiple environments, such as **Windows** and **Linux**.
-- [ ] Adding compatibility for **RedM**.
+- [X] Supporting multiple environments, such as **Windows** and **Linux**.
 
 We welcome community contributions to help speed up the implementation of these features.
 

@@ -1,19 +1,35 @@
 ﻿using System.Text.Json;
 using ArtifactsScraper.Responses;
 using HtmlAgilityPack;
+using Environment = ArtifactsScraper.Enums.Environment;
 
 namespace ArtifactsScraper;
     
 public class ArtifactsScraper
 {
-    private const string API_URL = "https://changelogs-live.fivem.net/api/changelog/versions/win32/server";
-    private const string DOWNLOAD_PAGE = "https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/";
+    
+    private string _apiUrl;
+    private string _downloadPage;
+
+    public ArtifactsScraper(Environment environment)
+    {
+        if (environment == Environment.Linux)
+        {
+            this._apiUrl = "https://changelogs-live.fivem.net/api/changelog/versions/linux/server";
+            this._downloadPage = "https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/";
+        }
+        else
+        {
+            this._apiUrl = "https://changelogs-live.fivem.net/api/changelog/versions/win32/server";
+            this._downloadPage = "https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/";
+        }
+    }
 
     public async Task<CommonArtifactVersionsResponse> GetCommonArtifactsVersions()
     {
         using var httpClient = new HttpClient();
         
-        var response = await httpClient.GetAsync(API_URL);
+        var response = await httpClient.GetAsync(_apiUrl);
 
         if (!response.IsSuccessStatusCode)
         {
@@ -38,7 +54,7 @@ public class ArtifactsScraper
         
         var httpClient = new HttpClient();
         
-        var response = await httpClient.GetAsync(DOWNLOAD_PAGE);
+        var response = await httpClient.GetAsync(_downloadPage);
 
         if (!response.IsSuccessStatusCode)
         {
@@ -80,7 +96,7 @@ public class ArtifactsScraper
             versions.Add(new ArtifactVersionData
             {
                 Version = version,
-                DownloadUrl = downloadUrl.Replace("./", DOWNLOAD_PAGE)
+                DownloadUrl = downloadUrl.Replace("./", _downloadPage)
             });
 
         }
