@@ -12,7 +12,7 @@ A lightweight library designed to simplify the process of scraping CFX.RE Artifa
 
 ### Usage Example
 ```csharp
-var artifactsScraper = new ArtifactsScraper();
+var artifactsScraper = new ArtifactsScraper(Environment.Linux);
 
 var commonVersions = await artifactsScraper.GetCommonArtifactsVersions();
 
