@@ -1,4 +1,4 @@
-﻿namespace GoldenHaven.Libraries.ArtifactsLoader.Responses;
+﻿namespace ArtifactsScraper.Responses;
 
 public class CommonArtifactVersionsResponse
 {

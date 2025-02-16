@@ -1,4 +1,4 @@
-﻿namespace GoldenHaven.Libraries.ArtifactsLoader;
+﻿namespace ArtifactsScraper;
 
 public class ArtifactVersionData
 {

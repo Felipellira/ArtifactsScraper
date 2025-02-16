@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
-using GoldenHaven.Libraries.ArtifactsLoader.Responses;
+using ArtifactsScraper.Responses;
 using HtmlAgilityPack;
 
-namespace GoldenHaven.Libraries.ArtifactsLoader;
-
+namespace ArtifactsScraper;
+    
 public class ArtifactsScraper
 {
     private const string API_URL = "https://changelogs-live.fivem.net/api/changelog/versions/win32/server";
